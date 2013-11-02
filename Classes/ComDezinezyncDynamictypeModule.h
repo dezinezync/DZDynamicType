@@ -5,9 +5,13 @@
  * and licensed under the Apache Public License (version 2)
  */
 #import "TiModule.h"
+#import "TiBase.h"
+#import "TiHost.h"
+#import "TiUtils.h"
 
-@interface ComDezinezyncDynamictypeModule : TiModule 
+@interface ComDezinezyncDynamictypeModule : TiModule
 {
+    BOOL canPerform;
 }
 
 @end

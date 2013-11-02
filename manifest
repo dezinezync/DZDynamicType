@@ -2,7 +2,7 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 1.0
+version: 1.1
 apiversion: 2
 description: Dynamic Type for iOS apps running on iOS 7
 author: Nikhil Nigade

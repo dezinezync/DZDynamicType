@@ -5,9 +5,6 @@
  * and licensed under the Apache Public License (version 2)
  */
 #import "ComDezinezyncDynamictypeModule.h"
-#import "TiBase.h"
-#import "TiHost.h"
-#import "TiUtils.h"
 
 @implementation ComDezinezyncDynamictypeModule
 
@@ -33,11 +30,22 @@
 	// you *must* call the superclass
 	[super startup];
     
-    [[NSNotificationCenter defaultCenter]
-     addObserver:self
-     selector:@selector(textSizeUpdate:)
-     name:UIContentSizeCategoryDidChangeNotification
-     object:nil];
+    canPerform = [[UIApplication sharedApplication] respondsToSelector:@selector(preferredContentSizeCategory)];
+    
+    if(canPerform)
+    {
+        NSLog(@"Can perform selector");
+        
+        [[NSNotificationCenter defaultCenter]
+         addObserver:self
+         selector:@selector(textSizeUpdate:)
+         name:UIContentSizeCategoryDidChangeNotification
+         object:nil];
+    }
+    else
+    {
+        [self throwException:@"Dynamic Type not supported on iOS 6 or below." subreason:nil location:nil];
+    }
 	
 	NSLog(@"[INFO] %@ loaded",self);
 }
@@ -50,6 +58,11 @@
 	
 	// you *must* call the superclass
 	[super shutdown:sender];
+    
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self
+     name:UIContentSizeCategoryDidChangeNotification
+     object:nil];
 }
 
 #pragma mark Cleanup 
@@ -112,15 +125,19 @@
 -(id)preferredSize:(id)args
 {
     
-    NSString *size = [[UIApplication sharedApplication] preferredContentSizeCategory];
-    
-    NSLog(@"Text Size String: %@", size);
-    
-    NSInteger _size = [self sizeFromString:size];
-    
-    NSLog(@"Text Size: %i", _size);
-    
-    return [NSNumber numberWithInteger:_size];
+    if(canPerform)
+    {
+        NSString *size = [[UIApplication sharedApplication] preferredContentSizeCategory];
+        
+        NSInteger _size = [self sizeFromString:size];
+        
+        return [NSNumber numberWithInteger:_size];
+    }
+    else
+    {
+        [self throwException:@"Dynamic Type not supported on iOS 6 or below." subreason:nil location:nil];
+        return;
+    }
     
 }
 

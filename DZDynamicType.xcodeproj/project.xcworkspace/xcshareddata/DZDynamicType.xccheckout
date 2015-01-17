@@ -10,29 +10,29 @@
 	<string>DZDynamicType</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>572D4628-1C72-4485-B95E-5A15FBFB9C2D</key>
-		<string>ssh://github.com/dezinezync/DZDynamicType.git</string>
+		<key>383569BA159AFF51A72F0FE8D85BB8C1525D07E0</key>
+		<string>https://github.com/ludolphus/DZDynamicType.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DZDynamicType.xcodeproj/project.xcworkspace</string>
+	<string>DZDynamicType.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>572D4628-1C72-4485-B95E-5A15FBFB9C2D</key>
+		<key>383569BA159AFF51A72F0FE8D85BB8C1525D07E0</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/dezinezync/DZDynamicType.git</string>
+	<string>https://github.com/ludolphus/DZDynamicType.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>572D4628-1C72-4485-B95E-5A15FBFB9C2D</string>
+	<string>383569BA159AFF51A72F0FE8D85BB8C1525D07E0</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>572D4628-1C72-4485-B95E-5A15FBFB9C2D</string>
+			<string>383569BA159AFF51A72F0FE8D85BB8C1525D07E0</string>
 			<key>IDESourceControlWCCName</key>
 			<string>DZDynamicType</string>
 		</dict>
